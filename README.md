@@ -11,6 +11,7 @@
 ## Nomes (Variáveis, métodos, tudo que precisa ser nomeado)
 
 - Favor escrever nomes legíveis
+- Seja explícito
 
 ## Comentários
 
