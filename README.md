@@ -35,8 +35,6 @@
 ## Chaves
 
   - Use-as sempre que for criar blocos de múltiplas linhas, com o uso das mesmas você facilita o fluxo de leitura dos seus companheiros de equipe e evita a adição de bugs acidentais.
-  - Elas devem ficar na mesma linha
-  - Se for usar um condicional "else", o posicione na mesma linha em que a chave do condicional "if" é fechado.
 
   ### Ruim:
     ```javascript
@@ -48,9 +46,41 @@
      if (count === 0) return false;
      ```
 
-    ### Bom:
-    ```javascript
-    if (count === 0) {
-        return false
-    }
-    ```
+  - As chaves devem ficar na mesma linha da abertura de um bloco
+  - Deixe um espaço antes da chave de abertura de bloco
+
+  ### Ruim:
+  ```javascript
+  if (count === 0){
+      return false;
+  }
+  ```
+
+
+  ### Bom:
+  ```javascript
+  if (count === 0) {
+      return false;
+  }
+  ```
+
+  - Se for usar um condicional "else", o posicione na mesma linha em que a chave do condicional "if" é fechado, tal condicional deve ser separado por um espaço da chave anterior ao mesmo.
+
+  ### Ruim:
+  ```javascript
+  if (count === 0); {
+      return false;
+  }else {
+      return true;
+  }
+  ```
+
+
+  ### Bom:
+  ```javascript
+  if (count === 0) {
+      return false;
+  } else {
+      return true;
+  }
+  ```
