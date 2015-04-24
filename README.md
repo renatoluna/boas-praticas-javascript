@@ -13,6 +13,11 @@
 - Favor escrever nomes legíveis
 - Seja explícito
 
+## Variáveis
+
+- Declare-as o mais cedo possível, o mais próximo possível de onde as utilizará
+- Evite o uso de variáveis globais
+
 ## Comentários
 
   - Se o seu método precisa de um comentário para explicar o que ele faz, ele está errado, modifique o seu nome e os nomes das suas variáveis de forma que ele seja auto-explicativo.
@@ -33,9 +38,9 @@
     }
     ```
 
-## Chaves
+## Chaves, condições e métodos
 
-  - Use-as sempre que for criar blocos de múltiplas linhas, com o uso das mesmas você facilita o fluxo de leitura dos seus companheiros de equipe e evita a adição de bugs acidentais.
+  - Use chaves sempre que for criar blocos de múltiplas linhas, com o uso das mesmas você facilita o fluxo de leitura dos seus companheiros de equipe e evita a adição de bugs acidentais.
 
   ### Ruim:
     ```javascript
@@ -85,3 +90,126 @@
   ```
 
   - Falando em condicionais, evitar o uso do "else" é sempre uma boa prática para se evitar aninhamentos.
+
+  ## Strings
+
+  - Use aspas simples `''` para strings.
+
+  ```javascript
+  // ruim
+  var name = "Francisco Silva";
+
+  // bom
+  var name = 'Francisco Silva';
+  ```
+
+  - Strings maiores que 80 characteres devem ser escritas em múltiplas linhas usando concatenação de string.
+  - Sim, elas devem ser evitadas, strings longas com concatenação podem impactar na performance(principalmente no IE) se forem usadas demais, mas lembre-se, você está escrevendo código e não um livro.
+
+  ```javascript
+  // ruim
+  var message = 'Esta é uma mensagem muito grande que não fica legível e quebra o fluxo de leitura dos seus amigos.';
+
+  // ruim
+  var message = 'Esta é uma mensagem muito grande \
+  que não fica legível e \
+  quebra o fluxo de leitura dos seus amigos, \
+  ler dessa forma fica é bem lento.';
+
+  // bom
+  var message = 'Apesar desta mensagem ser grande ' +
+    'o uso do símbolo de concatenação "+" ' +
+    'deixa claro para os seus amigos que a mensagem continua.' +
+    'na linha seguinte.';
+  ```
+
+- Falando em performance, lembre-se sempre do IE, tente sempre usar Array#join no lugar da concatenação tradicional de uma string: [jsPerf](http://jsperf.com/string-vs-array-concat/2).
+
+  ```javascript
+  var items;
+  var messages;
+  var length;
+  var i;
+
+  messages = [{
+    state: 'log',
+    message: 'Tal coisa aconteceu.'
+  }, {
+    state: 'warn',
+    message: 'Opa, algo não está normal…'
+  }, {
+    state: 'error',
+    message: 'Eita, rolou uma coisa aqui!'
+  }];
+
+  length = messages.length;
+
+  // ruim
+  function inbox (messages) {
+    items = '<ul>';
+
+    for (i = 0; i < length; i++) {
+      items += '<li>' + messages[i].message + '</li>';
+    }
+
+    return items + '</ul>';
+  }
+
+  // bom
+  function showMessages (messages) {
+      var itens = [];
+      itens.push('<ul>');
+
+      for (var i = 0, length = messages.length; i < length; i++) {
+
+      }
+
+      itens.push('</ul>');
+      return itens;
+  }
+
+  // bom
+  function inbox (messages) {
+    items = [];
+
+    for (i = 0; i < length; i++) {
+      items[i] = '<li>' + messages[i].message + '</li>';
+    }
+
+    return '<ul>' + items.join('') + '</ul>';
+  }
+  ```
+
+## Objetos
+
+- Use a sintaxe literal para a criação de objetos
+  ```javascript
+  // ruim
+  var myObject = new Object();
+
+  // bom
+  var myObject = {};
+  ```
+- Não use palavras reservadas como chaves
+  ```javascript
+  // ruim
+  var myObject = {
+    default: 'value'
+  };
+
+  // bom
+  var myObject = {
+    defaults:'value'
+  };
+  ```
+
+## Array
+
+- Use a sintaxe literal para a criação de arrays
+  ```javascript
+  // ruim
+  var myList = new Array();
+
+  // bom
+  var myList = [];
+  ```
