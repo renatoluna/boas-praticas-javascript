@@ -56,7 +56,6 @@
   }
   ```
 
-
   ### Bom:
   ```javascript
   if (count === 0) {
@@ -75,7 +74,6 @@
   }
   ```
 
-
   ### Bom:
   ```javascript
   if (count === 0) {
@@ -84,3 +82,5 @@
       return true;
   }
   ```
+
+  - Falando em condicionais, evitar o uso do "else" é sempre uma boa prática para se evitar aninhamentos.
