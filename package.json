@@ -1,0 +1,24 @@
+{
+    "name": "javascript-style-guide",
+    "version": "1.0.0",
+    "description": "Um guia de boas práticas em Javascript",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/uolcombr/boas-praticas-javascript.git"
+    },
+    "keywords": [
+        "javascript",
+        "Boas práticas",
+        "Style Guide",
+        "UOL"
+    ],
+    "author": "Renato Lopes de Luna Freire",
+    "license": "Apache",
+    "bugs": {
+        "url": "https://github.com/uolcombr/boas-praticas-javascript/issues"
+    },
+    "homepage": "https://github.com/uolcombr/boas-praticas-javascript"
+}
