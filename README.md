@@ -69,7 +69,7 @@
   }
   ```
 
-  - Se for usar um condicional "else", o posicione na mesma linha em que a chave do condicional "if" é fechado, tal condicional deve ser separado por um espaço da chave anterior ao mesmo.
+  - Se for usar um condicional "else", o posicione na mesma linha em que a chave do condicional "if" é fechado, tal condicional deve ser separado por um espaço das chaves.
 
   ### Ruim:
   ```javascript
